@@ -1,0 +1,27 @@
+package gmailaccount;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.testng.annotations.Test;
+import org.testng.internal.PropertiesFile;
+
+public class fileinputstream{
+
+	@Test
+	public void login() throws IOException
+	
+	{
+		
+Properties prop = new Properties();
+	FileInputStream fis = new FileInputStream("C:\\eclipse\\Gmail\\src\\gmailaccount\\file.properties");
+
+ prop.load(fis);
+ 
+ System.out.println(prop.getProperty("username"));
+ 
+	}
+
+}

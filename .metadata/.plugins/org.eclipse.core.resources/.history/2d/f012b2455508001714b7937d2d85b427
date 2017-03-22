@@ -1,0 +1,21 @@
+package gmailaccount;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Table {
+	public static void main(String[] args) {
+
+	WebDriver driver = new FirefoxDriver();
+	driver.get("http://www.espncricinfo.com/ci/engine/match/415281.html");
+	WebElement Table = driver.findElement(By.className("batting-table innings"));
+	
+	//find number of rows
+	List<WebElement> noofRows=Table.findElements(By.tagName("tr"));
+	System.out.println("No ocf Rows" + noofRows.size());
+}
+}
